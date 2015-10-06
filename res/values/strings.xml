@@ -1,0 +1,19 @@
+<resources>
+
+    <string name="app_name">OneBuy.CrossAppAPI</string>
+	<string name="erroConexaoInativa">Verifique a conexão com a Internet</string>
+    <string name="erroAutenticar">Não foi possível Autenticar. Tente novamente</string>
+    <string name="erroFalhaInesperada">Ocorreu um erro inesperado. Inicie o OneBuy novamente.</string>
+    <string name="erroContextoNaoInformado">O Contexto(this) deve ser informado.</string>
+    <string name="ONEBUY_FLUXOCROSSAPP">oneBuy.FluxoCrossApp</string>
+    <string name="ONEBUY_PACKAGE">oneBuy.Android</string>
+    <string name="ONEBUY_FLUXOCROSSAPPAPROVARCOMPRA">oneBuy.FluxoCrossAppAprovarCompra</string>
+    <string name="ACTION">Action</string>
+    <string name="URLRETORNO">UrlRetorno</string>
+    <string name="ONEBUY_FLUXOCROSSAPP_RECEBERTOKEN">oneBuy.FluxoCrossAppReceberToken</string>
+    <string name="OBTERTOKEN">ObterToken</string>
+    <string name="PLATAFORMA_ORIGEM">MOBILE</string>
+    <string name="CODIGO_AUTORIZACAO">CodigoAutorizacao</string>
+    <string name="ONEBUY_FLAG_FLUXOCROSSAPP">FlagFluxoCrossApp</string>
+    
+</resources>
