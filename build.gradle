@@ -1,0 +1,12 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+repositories {
+	//jcenter()
+   	maven { url "https://jitpack.io" }
+}
+
+dependencies {
+	compile 'com.github.onebuy:onebuy_crossapp_android:1.0'
+   
+}
