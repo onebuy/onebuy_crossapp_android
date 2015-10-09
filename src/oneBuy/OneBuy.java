@@ -28,11 +28,11 @@ import oneBuy.Util.Criptografia;
 import oneBuy.Util.EnderecoServico;
 import oneBuy.Util.HttpManager;
 import oneBuy.Util.OneBuyApplication;
-import oneBuy.Util.TaskCompleteAbrirAppOneBuy;
-import oneBuy.Util.TaskCompleteCapturarPedido;
-import oneBuy.Util.TaskCompleteCriarPedido;
-import oneBuy.Util.TaskCompleteRealizarCheckOut;
-import oneBuy.Util.TaskCompleteSondaPedido;
+import oneBuy.Util.InterfaceAbrirAppOneBuy;
+import oneBuy.Util.InterfaceCapturarPedido;
+import oneBuy.Util.InterfaceCriarPedido;
+import oneBuy.Util.InterfaceRealizarCheckOut;
+import oneBuy.Util.InterfaceSondaPedido;
 import oneBuy.Util.Util;
 
 public class OneBuy
@@ -40,26 +40,26 @@ public class OneBuy
 	private Context contexto;
 	private String mCultura;
 	private String mCulturaPadrao = "pt-BR";
-	private String mCodigoIntegracaoLoja;
+	private String mChaveLoja;
 	private asyncTaskObterAutorizacao asyncTaskObterAutorizacao;
 	private RetornoResponse objRetornoResponse;
 	private AutorizacaoResponse objAutorizacaoResponse;
-	private TaskCompleteAbrirAppOneBuy mTaskCompleteAbrirAppOneBuy;
+	private InterfaceAbrirAppOneBuy mTaskCompleteAbrirAppOneBuy;
 	
 	private asyncTaskRealizarCheckOut asyncTaskRealizarCheckOut;
-	private TaskCompleteRealizarCheckOut mTaskCompleteRealizarCheckOut;
+	private InterfaceRealizarCheckOut mTaskCompleteRealizarCheckOut;
 	private CheckoutOneBuyDadosResponse objCheckoutOneBuyDadosResponse;
 	
 	private asyncTaskCriarPedido asyncTaskCriarPedido;
-	private TaskCompleteCriarPedido mTaskCompleteCriarPedido;
+	private InterfaceCriarPedido mTaskCompleteCriarPedido;
 	private PedidoResponse objPedidoResponse;
 	
 	private asyncTaskCapturarPedido asyncTaskCapturarPedido;
-	private TaskCompleteCapturarPedido mTaskCompleteCapturarPedido;
+	private InterfaceCapturarPedido mTaskCompleteCapturarPedido;
 	private CapturaPedidoResponse objCapturaPedidoResponse;
 	
 	private asyncTaskSondarPedido asyncTaskSondarPedido;
-	private TaskCompleteSondaPedido mTaskCompleteSondaPedido;
+	private InterfaceSondaPedido mTaskCompleteSondaPedido;
 	private SondaPedidoResponse objSondaPedidoResponse;
 	
 	public void setCultura(String cultura) {
@@ -84,51 +84,51 @@ public class OneBuy
 		return mCultura;
 	}
 	
-	public void setCodigoIntegracaoLoja(String codigoIntegracaoLoja) {
-		mCodigoIntegracaoLoja = codigoIntegracaoLoja;
+	public void setChaveLoja(String chaveLoja) {
+		mChaveLoja = chaveLoja;
 	}
 	
-	private String getCodigoIntegracaoLoja() {
-		return mCodigoIntegracaoLoja;
+	private String getChaveLoja() {
+		return mChaveLoja;
 	}
 	
-	public void setTaskCompleteAbrirAppOneBuy(TaskCompleteAbrirAppOneBuy objTaskComplete) {
+	public void setInterfaceRetornoAbrirAppOneBuy(InterfaceAbrirAppOneBuy objTaskComplete) {
 		mTaskCompleteAbrirAppOneBuy = objTaskComplete;
 	}
 	
-	private TaskCompleteAbrirAppOneBuy getTaskCompleteAbrirAppOneBuy() {
+	private InterfaceAbrirAppOneBuy getTaskCompleteAbrirAppOneBuy() {
 		return mTaskCompleteAbrirAppOneBuy;
 	}
 	
-	public void setTaskCompleteRealizarCheckOut(TaskCompleteRealizarCheckOut objTaskComplete) {
+	public void setInterfaceRetornoRealizarCheckOut(InterfaceRealizarCheckOut objTaskComplete) {
 		mTaskCompleteRealizarCheckOut = objTaskComplete;
 	}
 	
-	private TaskCompleteRealizarCheckOut getTaskCompleteRealizarCheckOut() {
+	private InterfaceRealizarCheckOut getTaskCompleteRealizarCheckOut() {
 		return mTaskCompleteRealizarCheckOut;
 	}
 	
-	public void setTaskCompleteCriarPedido(TaskCompleteCriarPedido objTaskComplete) {
+	public void setInterfaceRetornoCriarPedido(InterfaceCriarPedido objTaskComplete) {
 		mTaskCompleteCriarPedido = objTaskComplete;
 	}
 	
-	private TaskCompleteCriarPedido getTaskCompleteCriarPedido() {
+	private InterfaceCriarPedido getTaskCompleteCriarPedido() {
 		return mTaskCompleteCriarPedido;
 	}
 	
-	public void setTaskCompleteCapturarPedido(TaskCompleteCapturarPedido objTaskComplete) {
+	public void setInterfaceRetornoCapturarPedido(InterfaceCapturarPedido objTaskComplete) {
 		mTaskCompleteCapturarPedido = objTaskComplete;
 	}
 	
-	private TaskCompleteCapturarPedido getTaskCompleteCapturarPedido() {
+	private InterfaceCapturarPedido getTaskCompleteCapturarPedido() {
 		return mTaskCompleteCapturarPedido;
 	}
 	
-	public void setTaskCompleteSondaPedido(TaskCompleteSondaPedido objTaskComplete) {
+	public void setInterfaceRetornoSondaPedido(InterfaceSondaPedido objTaskComplete) {
 		mTaskCompleteSondaPedido = objTaskComplete;
 	}
 	
-	private TaskCompleteSondaPedido getTaskCompleteSondaPedido() {
+	private InterfaceSondaPedido getTaskCompleteSondaPedido() {
 		return mTaskCompleteSondaPedido;
 	}
 	
@@ -348,7 +348,7 @@ public class OneBuy
 				cultura = mCulturaPadrao;
 			}
 			
-			String codigoIntegracaoLoja = getCodigoIntegracaoLoja();
+			String codigoIntegracaoLoja = getChaveLoja();
 			
 			if(cultura != null && codigoIntegracaoLoja != null && identificadorUsuarioTransacao != null)
 			{

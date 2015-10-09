@@ -3,7 +3,7 @@ package oneBuy.Util;
 public class EnderecoServico {
 	
 	//Homolog
-	public final static String URL_BASE					 		= "https://api.onebuy.com/hub/v1/";
+	public final static String URL_BASE					 		= "https://d-api.onebuy.com/hub/v1/";
 	
 	//Obter Autorização 
 	public final static String URL_OBTER_AUTORIZACAO	  	 = URL_BASE.concat("IntegracaoCrossApp/ObterAutorizacao");
